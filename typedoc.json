@@ -1,5 +1,5 @@
 {
-	"out": "./public/",
+	"out": "./docs/",
 	"readme": "./README.md",
 	"name": "@chikoshidri/akira",
 	"entryPoints": ["src/index.ts"],

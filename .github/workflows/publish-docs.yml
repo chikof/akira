@@ -31,9 +31,9 @@ jobs:
         if: github.event_name == 'push' && github.ref == 'refs/heads/main'
         run: |
           echo -e "\n# Remove any old files in the dist folder"
-          rm -rfv out/public/*
+          rm -rfv out/docs/*
           echo -e "\n# Move the generated docs to the newly-checked-out repo, to be committed and pushed"
-          rsync -vaI public/ out/public
+          rsync -vaI docs/ out/docs
           echo -e "\n# Commit and push"
           cd out
           git add --all .
