@@ -1,0 +1,17 @@
+# Folders that are on other branches
+node_modules/
+.github/
+dist/
+
+# Ignore heapsnapshot and log files
+*.heapsnapshot
+*.log
+
+# Ignore package locks
+package-lock.json
+
+# Environment variables
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
