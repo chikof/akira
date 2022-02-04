@@ -1,8 +1,0 @@
-{
-	"out": "./public/",
-	"readme": "./README.md",
-	"name": "@chikoshidri/akira",
-	"entryPoints": ["src/index.ts"],
-	"excludeExternals": true,
-	"tsconfig": "./src/tsconfig.json"
-}
