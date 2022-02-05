@@ -4,7 +4,7 @@
 
 # @chikoshidori/akira
 
-**An anime scrapper.**
+**An anime scraper.**
 
 [![GitHub](https://img.shields.io/github/license/chikoshidori/akira)](https://github.com/chikoshidori/akira/blob/main/LICENSE.md)
 [![npm](https://img.shields.io/npm/v/@chikoshidori/akira?color=crimson&logo=npm&style=flat-square)](https://www.npmjs.com/package/@chikoshidori/akira)
@@ -13,7 +13,7 @@
 
 # Description
 
-A scrapper to get information about some anime pages.
+A scraper to get information about some anime pages.
 
 ## Features
 

@@ -15,9 +15,12 @@
 		"sversion": "standard-version",
 		"commit": "git-cz",
 		"prepublishOnly": "rollup-type-bundler -v -e url events",
-		"prepare": "husky install .github/husky"
+		"prepare": "husky install .github/husky",
+		"test": "yarn build && node test/test.mjs"
 	},
 	"dependencies": {
+		"@sapphire/utilities": "^3.3.0",
+		"playwright": "^1.18.1",
 		"tslib": "^2.3.1"
 	},
 	"devDependencies": {
@@ -64,7 +67,7 @@
 		"ts",
 		"yarn",
 		"anime",
-		"scrapper",
+		"scraper",
 		"typescript",
 		"chikoshidori",
 		"@chikoshidori/akira"
