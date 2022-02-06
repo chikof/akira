@@ -1,7 +1,7 @@
 import type { AvailableTLDsType } from './utils';
-export type UrlType = `https://${string}.${AvailableTLDsType}${'/' | `/${string}`}`;
+export type UrlType = `https://${Lowercase<string>}.${AvailableTLDsType}${'/' | `/${string}`}`;
 
-export const AvailableServicesURLS: Record<string, UrlType> = {
+export const AvailableServicesURLS: Record<string, UrlType> = <const>{
 	TioAnime: 'https://tioanime.com/'
 };
 export type AvailableServicesURLSType = keyof typeof AvailableServicesURLS;

@@ -1,4 +1,4 @@
-export const AvailableTLDs = [
+export const AvailableTLDs = <const>[
 	'aaa',
 	'aarp',
 	'abarth',
@@ -1486,4 +1486,4 @@ export const AvailableTLDs = [
 	'zone',
 	'zuerich',
 	'zw'
-] as const;
+];

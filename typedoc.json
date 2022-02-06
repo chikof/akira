@@ -1,8 +1,16 @@
 {
+	"$schema": "https://typedoc.org/schema.json",
 	"out": "./docs/",
+	"emit": "true",
 	"readme": "./README.md",
 	"name": "@chikoshidri/akira",
 	"entryPoints": ["src/index.ts"],
 	"excludeExternals": true,
-	"tsconfig": "./src/tsconfig.json"
+	"tsconfig": "./src/tsconfig.json",
+	"hideGenerator": true,
+	"markedOptions": {
+		"gfm": true,
+		"mangle": false,
+		"smartypants": true
+	}
 }

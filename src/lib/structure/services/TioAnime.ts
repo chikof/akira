@@ -15,8 +15,4 @@ export class TioAnime extends StructureService {
 		await browser.close();
 		return result;
 	}
-
-	public override toString(): string {
-		return 'TioAnime';
-	}
 }
