@@ -1,6 +1,5 @@
 export * from './lib/types';
 export * from './lib/structure';
-export type { AvailableTLDs } from './lib/utils/TLDs';
 
 export { Akira } from './lib/Akira';
 

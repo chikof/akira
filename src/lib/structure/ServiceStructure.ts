@@ -1,13 +1,13 @@
 import type { Awaitable } from '@sapphire/utilities';
 import { Browser, chromium, type Page } from 'playwright';
-import type { ServiceOptions } from '../types/options';
+import type { ServiceOption } from '../types/options';
 
 /**
  * Class to extend when creating a new service
  * @since 0.0.2
  */
 export abstract class StructureService {
-	public constructor(public url: ServiceOptions) {}
+	public constructor(public url: ServiceOption) {}
 
 	/**
 	 * The method to get the latest anime releases

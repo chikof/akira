@@ -1,4 +1,4 @@
 /**
  * The url's service
  */
-export type ServiceOptions = Lowercase<string>;
+export type ServiceOption = Lowercase<string>;
