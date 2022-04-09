@@ -16,6 +16,12 @@ export abstract class StructureService {
 	public abstract lastAnimes(): Awaitable<unknown>;
 
 	/**
+	 * The method to search for an anime
+	 * @since 0.0.2
+	 */
+	public abstract search(query: string): Promise<unknown>;
+
+	/**
 	 * The method to create a new page
 	 * @since 0.0.2
 	 */
@@ -31,7 +37,7 @@ export abstract class StructureService {
 	 * The method to get the service name
 	 * @since 0.0.2
 	 */
-	public toString(): string {
+	public toString(): Readonly<string> {
 		return this.constructor.name;
 	}
 }
