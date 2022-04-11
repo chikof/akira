@@ -1,6 +1,7 @@
-export const AvailableServicesURLS = <const>{
+export const AvailableServicesURLS = {
 	TioAnime: 'https://tioanime.com/'
-};
+} as const;
+
 export type AvailableServicesURLSType = keyof typeof AvailableServicesURLS;
 
 export interface BaseElements {

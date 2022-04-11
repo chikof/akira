@@ -1,5 +1,5 @@
 import { TioAnime } from './structure/services/TioAnime';
-import { AvailableServicesURLS } from './types/enums';
+import { AvailableServicesURLS } from './types';
 
 export class Akira {
 	/**

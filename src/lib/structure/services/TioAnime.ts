@@ -1,5 +1,5 @@
-import { PageLocations, AvailableServicesURLS } from '../../types/enums';
-import type { ServiceOption } from '../../types/options';
+import { PageLocations, AvailableServicesURLS } from '../../types';
+import type { ServiceOption } from '../../types';
 import { StructureService } from '../ServiceStructure';
 
 export class TioAnime extends StructureService {
@@ -8,24 +8,15 @@ export class TioAnime extends StructureService {
 	}
 
 	public async lastAnimes(): Promise<string[]> {
-		const [page, browser] = await this.newPage();
-		const columns = page.locator(PageLocations[this.toString() as 'TioAnime'].LatestAnimes);
-		const result = this.removeEnters((await columns.allTextContents())[0]);
-
-		await browser.close();
-		return result;
+		return this.getLatestAnimes(this.toString());
 	}
 
 	public async search(query: string): Promise<string[]> {
 		const [page, browser] = await this.newPage(`${this.url}directorio?q=${query.split(' ').join('+')}`);
-		const columns = page.locator(PageLocations[this.toString() as 'TioAnime'].Search);
+		const columns = page.locator(PageLocations[this.toString()].Search);
 		const result = (await columns.allTextContents()).map((s) => this.removeEnters(s))[0];
 
 		await browser.close();
 		return result;
-	}
-
-	private removeEnters(text: string) {
-		return text.split(/\n/g).filter((w) => w.length > 2);
 	}
 }

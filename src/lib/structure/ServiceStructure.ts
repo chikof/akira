@@ -1,6 +1,6 @@
 import type { Awaitable } from '@sapphire/utilities';
 import { Browser, chromium, type Page } from 'playwright';
-import type { ServiceOption } from '../types/options';
+import { AvailableServicesURLSType, PageLocations, ServiceOption } from '../types';
 
 /**
  * Class to extend when creating a new service
@@ -22,22 +22,31 @@ export abstract class StructureService {
 	public abstract search(query: string): Promise<unknown>;
 
 	/**
-	 * The method to create a new page
+	 * The method to get the service name
 	 * @since 0.0.2
 	 */
-	public async newPage(url?: string): Promise<[Page, Browser]> {
+	public toString(): Readonly<AvailableServicesURLSType> {
+		return this.constructor.name as AvailableServicesURLSType;
+	}
+
+	protected async newPage(url?: string): Promise<[Page, Browser]> {
 		const browser = await chromium.launch();
 		const page = await browser.newPage();
-		await page.goto(url ? url : this.url);
+		await page.goto(url || this.url);
 
 		return [page, browser];
 	}
 
-	/**
-	 * The method to get the service name
-	 * @since 0.0.2
-	 */
-	public toString(): Readonly<string> {
-		return this.constructor.name;
+	protected async getLatestAnimes(service: AvailableServicesURLSType) {
+		const [page, browser] = await this.newPage();
+		const columns = page.locator(PageLocations[service].LatestAnimes);
+		const result = this.removeEnters((await columns.allTextContents())[0]);
+
+		await browser.close();
+		return result;
+	}
+
+	protected removeEnters(text: string): string[] {
+		return text.split(/\n/g).filter((w) => w.length > 2);
 	}
 }
