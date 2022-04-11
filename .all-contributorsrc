@@ -1,13 +1,27 @@
 {
-	"projectName": "akira",
-	"projectOwner": "chikoshidori",
-	"repoType": "github",
-	"repoHost": "https://github.com",
-	"files": ["README.md"],
-	"imageSize": 100,
-	"commit": true,
-	"commitConvention": "angular",
-	"contributors": [],
-	"contributorsPerLine": 7,
-	"skipCi": true
+  "projectName": "akira",
+  "projectOwner": "ChikoShidori",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": true,
+  "commitConvention": "angular",
+  "contributors": [
+    {
+      "login": "ChikoShidori",
+      "name": "Chiko",
+      "avatar_url": "https://avatars.githubusercontent.com/u/53100578?v=4",
+      "profile": "http://chikum.me",
+      "contributions": [
+        "bug",
+        "code",
+        "maintenance"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "skipCi": true
 }
