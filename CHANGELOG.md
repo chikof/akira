@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.4](https://github.com/chikoshidori/akira/compare/v0.0.3...v0.0.4) (2022-04-12)
+
+### Features
+
+-   **animixplay:** new support for a new page ([3565fb0](https://github.com/chikoshidori/akira/commit/3565fb01e428999a580ea079f89f1a9ea68d5c83))
+
 ### [0.0.3](https://github.com/chikoshidori/akira/compare/v0.0.2...v0.0.3) (2022-04-12)
 
 ### Bug Fixes
