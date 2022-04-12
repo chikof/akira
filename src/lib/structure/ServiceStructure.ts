@@ -40,7 +40,17 @@ export abstract class StructureService {
 	protected async getLatestAnimes(service: AvailableServicesURLSType) {
 		const [page, browser] = await this.newPage();
 		const columns = page.locator(PageLocations[service].LatestAnimes);
-		const result = this.removeEnters((await columns.allTextContents())[0]);
+		const result = await columns.allTextContents();
+
+		await browser.close();
+		return result;
+	}
+
+	protected async getSearch(query: string) {
+		const [page, browser] = await this.newPage(`${this.url}${query}`);
+		await this.waitForSearch(page);
+		const columns = page.locator(PageLocations[this.toString()].Search);
+		const result = await columns.allTextContents();
 
 		await browser.close();
 		return result;
@@ -48,5 +58,9 @@ export abstract class StructureService {
 
 	protected removeEnters(text: string): string[] {
 		return text.split(/\n/g).filter((w) => w.length > 2);
+	}
+
+	protected async waitForSearch(page: Page) {
+		return page.waitForSelector(PageLocations[this.toString()].Search);
 	}
 }

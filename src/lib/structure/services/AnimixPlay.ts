@@ -2,8 +2,8 @@ import { AvailableServicesURLS } from '../../types';
 import type { ServiceOption } from '../../types';
 import { StructureService } from '../ServiceStructure';
 
-export class TioAnime extends StructureService {
-	public constructor(public override url: ServiceOption = AvailableServicesURLS.TioAnime) {
+export class AnimixPlay extends StructureService {
+	public constructor(public override url: ServiceOption = AvailableServicesURLS.AnimixPlay) {
 		super(url);
 	}
 
@@ -12,6 +12,6 @@ export class TioAnime extends StructureService {
 	}
 
 	public async search(query: string): Promise<string[]> {
-		return this.getSearch(`directorio?q=${query.split(' ').join('+')}`);
+		return this.getSearch(`?q=${query.split(' ').join('%20')}&sengine=al`);
 	}
 }
