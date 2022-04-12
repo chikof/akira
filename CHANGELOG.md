@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.3](https://github.com/chikoshidori/akira/compare/v0.0.2...v0.0.3) (2022-04-12)
+
+### Bug Fixes
+
+-   the missing directory has been fixed ([134774a](https://github.com/chikoshidori/akira/commit/134774ad2def838041d52a62952fd7029cb2c5ea))
+
 ### 0.0.2 (2022-04-11)
 
 ### Features
