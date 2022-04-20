@@ -27,7 +27,7 @@ jobs:
         uses: actions/checkout@dcd71f646680f2efd8db4afa5ad64fdcba30e748 # tag=v3
         with:
           fetch-depth: 0
-          repository: ${{ github.event.inputs.repository || 'sapphiredev/utilities' }}
+          repository: ${{ github.event.inputs.repository || 'chikoshidori/akira' }}
           ref: ${{ github.event.inputs.ref || 'main' }}
       - name: Add TypeScript problem matcher
         run: echo "::add-matcher::.github/problemMatchers/tsc.json"
@@ -49,14 +49,8 @@ jobs:
           yarn config set npmAuthToken ${NODE_AUTH_TOKEN}
           yarn config set npmPublishRegistry "https://registry.yarnpkg.com"
 
-          yarn bump --concurrency=1 -- --preid "${TAG}.$(git rev-parse --verify --short HEAD)"
+          yarn bump --preid "${TAG}.$(git rev-parse --verify --short HEAD)"
 
-          for d in packages/*; do
-            pushd $d
-
-            yarn npm publish --tag ${TAG}
-
-            popd
-          done
+          yarn npm publish --tag ${TAG}
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_PUBLISH_TOKEN }}
