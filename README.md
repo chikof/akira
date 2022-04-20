@@ -17,7 +17,32 @@ A scraper to get information about some anime pages.
 
 ## Features
 
--   Template
+-   TioAnime support
+    -   search anime by name
+    -   latest anime releases
+-   AnimixPlay support
+    -   search anime by name
+    -   latest anime releases
+
+## Examples
+
+To search for an anime by name
+
+```ts
+// const { AnimixPlay } = require('@chikoshidori/akira');
+import { AnimixPlay } from '@chikoshidori/akira';
+
+new AnimixPlay().search('Seishun buta Yarou wa Bunny').then(console.log); // -> ['...', '...']
+```
+
+To get the latest anime releases
+
+```ts
+import { AnimixPlay } from '@chikoshidori/akira';
+// const { AnimixPlay } = require('@chikoshidori/akira');
+
+new AnimixPlay().lastAnimes().then(console.log); // -> ['...', '...']
+```
 
 ---
 
