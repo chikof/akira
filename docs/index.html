@@ -21,8 +21,27 @@
   <h2>Features</h2>
 </a>
 <ul>
-<li>Template</li>
+<li>TioAnime support<ul>
+<li>search anime by name</li>
+<li>latest anime releases</li>
 </ul>
+</li>
+<li>AnimixPlay support<ul>
+<li>search anime by name</li>
+<li>latest anime releases</li>
+</ul>
+</li>
+</ul>
+
+<a href="#examples" id="examples" style="color: inherit; text-decoration: none;">
+  <h2>Examples</h2>
+</a>
+<p>To search for an anime by name</p>
+<pre><code class="language-ts"><span class="hl-0">// const { AnimixPlay } = require(&#39;@chikoshidori/akira&#39;);</span><br/><span class="hl-1">import</span><span class="hl-2"> { </span><span class="hl-3">AnimixPlay</span><span class="hl-2"> } </span><span class="hl-1">from</span><span class="hl-2"> </span><span class="hl-4">&#39;@chikoshidori/akira&#39;</span><span class="hl-2">;</span><br/><br/><span class="hl-5">new</span><span class="hl-2"> </span><span class="hl-6">AnimixPlay</span><span class="hl-2">().</span><span class="hl-6">search</span><span class="hl-2">(</span><span class="hl-4">&#39;Seishun buta Yarou wa Bunny&#39;</span><span class="hl-2">).</span><span class="hl-6">then</span><span class="hl-2">(</span><span class="hl-3">console</span><span class="hl-2">.</span><span class="hl-3">log</span><span class="hl-2">); </span><span class="hl-0">// -&gt; [&#39;...&#39;, &#39;...&#39;]</span>
+</code></pre>
+<p>To get the latest anime releases</p>
+<pre><code class="language-ts"><span class="hl-1">import</span><span class="hl-2"> { </span><span class="hl-3">AnimixPlay</span><span class="hl-2"> } </span><span class="hl-1">from</span><span class="hl-2"> </span><span class="hl-4">&#39;@chikoshidori/akira&#39;</span><span class="hl-2">;</span><br/><span class="hl-0">// const { AnimixPlay } = require(&#39;@chikoshidori/akira&#39;);</span><br/><br/><span class="hl-5">new</span><span class="hl-2"> </span><span class="hl-6">AnimixPlay</span><span class="hl-2">().</span><span class="hl-6">lastAnimes</span><span class="hl-2">().</span><span class="hl-6">then</span><span class="hl-2">(</span><span class="hl-3">console</span><span class="hl-2">.</span><span class="hl-3">log</span><span class="hl-2">); </span><span class="hl-0">// -&gt; [&#39;...&#39;, &#39;...&#39;]</span>
+</code></pre>
 <hr>
 
 <a href="#contributors-✨" id="contributors-✨" style="color: inherit; text-decoration: none;">
