@@ -41,7 +41,7 @@ To get the latest anime releases
 import { AnimixPlay } from '@chikoshidori/akira';
 // const { AnimixPlay } = require('@chikoshidori/akira');
 
-new AnimixPlay().lastAnimes().then(console.log); // -> ['...', '...']
+new AnimixPlay().latestAnimes().then(console.log); // -> ['...', '...']
 ```
 
 ---

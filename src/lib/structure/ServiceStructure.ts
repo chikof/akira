@@ -13,7 +13,7 @@ export abstract class StructureService {
 	 * The method to get the latest anime releases
 	 * @since 0.0.2
 	 */
-	public abstract lastAnimes(): Awaitable<unknown>;
+	public abstract latestAnimes(): Awaitable<unknown>;
 
 	/**
 	 * The method to search for an anime
