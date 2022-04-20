@@ -24,10 +24,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Project
-        uses: actions/checkout@a12a3943b4bdde767164f792f33f40b04645d846 # tag=v3
+        uses: actions/checkout@dcd71f646680f2efd8db4afa5ad64fdcba30e748 # tag=v3
         with:
           fetch-depth: 0
-          repository: ${{ github.event.inputs.repository || 'chikoshidori/akira' }}
+          repository: ${{ github.event.inputs.repository || 'sapphiredev/utilities' }}
           ref: ${{ github.event.inputs.ref || 'main' }}
       - name: Add TypeScript problem matcher
         run: echo "::add-matcher::.github/problemMatchers/tsc.json"
@@ -36,18 +36,27 @@ jobs:
         with:
           node-version: 16
           cache: yarn
-          registry-url: https://registry.npmjs.org/
+          registry-url: https://registry.yarnpkg.com/
       - name: Install Dependencies
         run: yarn --immutable
-      - name: Bump Version & Publish
+      - name: Build all packages
+        run: yarn build
+      - name: Bump Versions & Publish
         run: |
           # Resolve the tag to be used. "next" for push events, "pr-{prNumber}" for dispatch events.
           TAG=$([[ ${{ github.event_name }} == 'push' ]] && echo 'next' || echo 'pr-${{ github.event.inputs.prNumber }}')
 
-          # Bump the version
-          yarn standard-version --skip.commit --skip.tag --prerelease "${TAG}.$(git rev-parse --verify --short HEAD)"
+          yarn config set npmAuthToken ${NODE_AUTH_TOKEN}
+          yarn config set npmPublishRegistry "https://registry.yarnpkg.com"
 
-          # Publish to NPM
-          npm publish --tag ${TAG} || true
+          yarn bump --concurrency=1 -- --preid "${TAG}.$(git rev-parse --verify --short HEAD)"
+
+          for d in packages/*; do
+            pushd $d
+
+            yarn npm publish --tag ${TAG}
+
+            popd
+          done
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_PUBLISH_TOKEN }}
