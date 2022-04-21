@@ -5,5 +5,9 @@
 	"editor.insertSpaces": false,
 	"editor.detectIndentation": false,
 	"files.eol": "\n",
-	"deno.enable": false
+	"deno.enable": false,
+
+	"yaml.schemas": {
+		"https://raw.githubusercontent.com/favware/cliff-jumper/main/assets/cliff-jumper.schema.json": ["**/.cliff-jumperrc.yml"]
+	}
 }

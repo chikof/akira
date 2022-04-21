@@ -7,7 +7,7 @@ export class TioAnime extends StructureService {
 		super(url);
 	}
 
-	public async lastAnimes(): Promise<string[]> {
+	public async latestAnimes(): Promise<string[]> {
 		return this.getLatestAnimes(this.toString());
 	}
 
