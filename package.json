@@ -19,7 +19,7 @@
 		"test": "yarn build && node test/test.mjs"
 	},
 	"dependencies": {
-		"@sapphire/utilities": "^3.7.0",
+		"@sapphire/utilities": "^3.8.0",
 		"playwright": "^1.24.2",
 		"tslib": "^2.4.0"
 	},
